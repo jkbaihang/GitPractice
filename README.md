@@ -1,7 +1,7 @@
 # GitPractice
 Git practice note
 
-####配置别名
+### 配置别名
 ```
 $ git config --global alias.co checkout
 ```
