@@ -17,5 +17,16 @@ $ cd ~ | cat .gitconfig
 	co = checkout
 	ci = commit
 	br = branch
-
 ```
+
+
+### 查看提交历史
+```
+$ git log
+```
+ - -p:用来显示每次提交的内容差异
+ - -数字n:-2显示两次提交
+ - -stat:简略的统计信息
+ - --pretty=one:每个提交放在一行显示
+ - --prrtty=format 参数:定制纪录格式
+
