@@ -30,3 +30,8 @@ $ git log
  - --pretty=one:每个提交放在一行显示
  - --prrtty=format 参数:定制纪录格式
 
+### 取消暂存的文件
+`git reset HEAD <file>`
+
+### 撤销对文件的修改
+`git checkout -- <fie>`
