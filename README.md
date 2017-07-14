@@ -35,3 +35,37 @@ $ git log
 
 ### 撤销对文件的修改
 `git checkout -- <fie>`
+
+### 远程仓库
+ - 查看远程仓库
+```
+$ git remote #-v参数显示地址
+```
+
+ - 添加远程仓库
+```
+$ git remote add <shortname> <url>
+```
+可以使用字符串pb来代替整个URL
+
+```
+$ git remote add pb https://github.com/paulboone/ticgit
+$ git fetch pb
+```
+ - 从远程仓库中抓取与拉取 
+```
+$ git fetch [remote-name]
+```
+ - 推送到远程仓库
+```
+$ git push [remote-name] [branch- name]
+```
+ - 查看远程仓库
+```
+$ remote show [remote-name]
+```
+ - 远程仓库移除和重命名
+```
+git remote rename [old-remoteName] [newname]
+git remote rm [remoteName]
+```
