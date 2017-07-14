@@ -98,3 +98,6 @@ git push origin --tags
  - HEAD指针:指向当前所在的本地分支，可以将HEAD想象为当前分支的别名。
  - 创建分支并切换`git checkou -b [branchName]`
  - 删除分支`git branch -d [branchName]`
+ - 查看每个分支的最后一次提交 `git branch -v`
+ - 查看哪些分支合并到当前分支 `git branch --merged`
+ - 查看哪些分支未合并到当前分支 `git branch --no-merged`
