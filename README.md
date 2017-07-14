@@ -29,6 +29,8 @@ $ git log
  - -stat:简略的统计信息
  - --pretty=one:每个提交放在一行显示
  - --prrtty=format 参数:定制纪录格式
+ - --decorate 查看分支所指对象
+ - --graph 查看分支交叉情况
 
 ### 取消暂存的文件
 `git reset HEAD <file>`
@@ -91,3 +93,8 @@ git push origin --tags
 ```
 将所有不在远程仓库服务器上的标签上传
 
+### 分支
+ - master:maste并不是一个特殊的分支，只是系统默认创建。
+ - HEAD指针:指向当前所在的本地分支，可以将HEAD想象为当前分支的别名。
+ - 创建分支并切换`git checkou -b [branchName]`
+ - 删除分支`git branch -d [branchName]
