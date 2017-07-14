@@ -69,3 +69,25 @@ $ remote show [remote-name]
 git remote rename [old-remoteName] [newname]
 git remote rm [remoteName]
 ```
+
+### 标签
+ - 创建标签
+```
+$ git tag -a v1.0 -m 'version 1.4' #附注标签
+$ git tag v1.1 #轻量标签
+```
+
+ - 查看
+`git show v1.0`
+附注便签显示标签信息和提交信息，轻量标签只显示提交信息
+
+ - 共享标签
+```
+git push origin [tagname]。
+```
+将标签也传到远程仓库服务器
+```
+git push origin --tags
+```
+将所有不在远程仓库服务器上的标签上传
+
