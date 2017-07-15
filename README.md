@@ -101,3 +101,21 @@ git push origin --tags
  - 查看每个分支的最后一次提交 `git branch -v`
  - 查看哪些分支合并到当前分支 `git branch --merged`
  - 查看哪些分支未合并到当前分支 `git branch --no-merged`
+
+### 远程分支
+ - 远程跟踪分支:远程分支状态的引用，不能在本地移动。在做网络通信操作时，会自动根据远程库的状态而移动.远程仓库名字一般为origin。以`(remote)/(branch)`形式命名，比如`origin/master`。
+ - 跟踪分支：从一个远程跟踪分支checout的一个本地分支(也叫上游分支)。跟 踪分支是与远程分支有直接关系的本地分支。
+```
+git checkout -b [branch] [remotename]/[branch]
+git checkout --track [remotename]/[branch]
+
+```
+设置已有的本地分支跟踪一个刚刚拉取下来的远程分支,或者想要修改正在跟踪的上游分支
+```   
+$ git branch -u origin/serverfix
+Branch serverfix set up to track remote branch serverfix from origin.
+```
+ - 查看已设置的跟踪分支
+```
+$ git branch -vv
+```
