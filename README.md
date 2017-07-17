@@ -33,9 +33,12 @@ $ git log
  - --graph 查看分支交叉情况
 
 ##### 提交区间
+```
   A <- B <- E <- F -< **master**
          \
 	  <- C <- D <- **experiment**
+```
+
  - 双点:Git 选出在一个分支中而不在另一个分支中的提交。
 ```
 $ git log master..experiment
