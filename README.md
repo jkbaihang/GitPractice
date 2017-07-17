@@ -32,6 +32,38 @@ $ git log
  - --decorate 查看分支所指对象
  - --graph 查看分支交叉情况
 
+##### 提交区间
+  A <- B <- E <- F -< **master**
+         \
+	  <- C <- D <- **experiment**
+ - 双点:Git 选出在一个分支中而不在另一个分支中的提交。
+```
+$ git log master..experiment
+D
+C
+```
+
+ - 多点:查看哪些提交是被包含在 某些分支中的一个,但是不在你当前的分支上.￼Git 允许你在任意引用前加上 ^ 字符或者 --not 来指明你不希望 提交被包含其中的分支。因此下列3个命令是等价的:
+```
+$ git log refA..refB
+$ git log ^refA refB
+$ git log refB --not refA
+```
+想查看所有被 refA 或 refB 包含的但是不被 refC 包含的提交
+```
+$ git log refA refB ^refC
+$ git log refA refB --not refC
+
+```
+ - 三点：想查看所有被 refA 或 refB 包含的但是不被 refC 包含的提交。
+```
+$ git log master...experiment
+F
+E
+D
+C
+```
+
 ### 取消暂存的文件
 `git reset HEAD <file>`
 
