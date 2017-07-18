@@ -240,4 +240,4 @@ reset 命令会以特定的顺序重写这三棵树(HEAD,索引index，工作目
 3. 使工作目录看起来像索引
 
 ### rest 和 checkout 区别
- ![image](https://github.com/jkbaihang/Gitpractice/raw/master/a.jpg)
+ ![image](https://github.com/jkbaihang/Gitpractice/raw/master/a.png)
