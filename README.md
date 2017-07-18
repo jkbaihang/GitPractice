@@ -159,6 +159,20 @@ $ git branch -vv
  - 变基:寻找两个分支的最近共同祖先，然后对比当前分支相对于该祖先的历史提交，提取相应的修改并存为临时文件，然后将当前分支指向目标基底，然后将之前另存为临时文件的修改依序应用。
  - 变基的特点:实际的开发工作是并行的，但是看起来提交历史是是串行的。
  - 变基的使用：只对尚未推送或分享给别人的本地修改执行变基操作清理历史,从不对已推送至别处的提交执行变基操作。
+#####语法
+```
+用法1: git rebase --onto  <newbase>  <since>      <till>  //<since>..<till>是指包括<till>的所有历史提交排除<since>以及<since>的历史提交后形成的版本范围。
+用法2: git rebase --onto  <newbase>  <since>
+用法3: git rebase         <newbase>               <till>
+用法4: git rebase         <newbase>
+```
+ 完整语法
+```
+用法1: git rebase  --onto  <newbase>  <since>      <till>
+用法2: git rebase  --onto  <newbase>  <since>      [HEAD]
+用法3: git rebase [--onto] <newbase>  [<newbase>]  <till>
+用法4: git rebase [--onto] <newbase>  [<newbase>]  [HEAD]
+```
 
 ### 储存工作
  - 储存工作：`git stash`
