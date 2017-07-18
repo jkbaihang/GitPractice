@@ -238,3 +238,6 @@ reset 命令会以特定的顺序重写这三棵树(HEAD,索引index，工作目
 1. 移动 HEAD 分支的指向 (若指定了 --soft,则到此停止)
 2. 使索引看起来像 HEAD (若未指定 --hard,则到此停止)
 3. 使工作目录看起来像索引
+
+### rest 和 checkout 区别
+ ![image](https://github.com/jkbaihang/Gitpractice/raw/master/a.jpg)
