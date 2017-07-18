@@ -159,7 +159,7 @@ $ git branch -vv
  - 变基:寻找两个分支的最近共同祖先，然后对比当前分支相对于该祖先的历史提交，提取相应的修改并存为临时文件，然后将当前分支指向目标基底，然后将之前另存为临时文件的修改依序应用。
  - 变基的特点:实际的开发工作是并行的，但是看起来提交历史是是串行的。
  - 变基的使用：只对尚未推送或分享给别人的本地修改执行变基操作清理历史,从不对已推送至别处的提交执行变基操作。
-#####语法
+##### 语法
 ```
 用法1: git rebase --onto  <newbase>  <since>      <till>  //<since>..<till>是指包括<till>的所有历史提交排除<since>以及<since>的历史提交后形成的版本范围。
 用法2: git rebase --onto  <newbase>  <since>
@@ -173,6 +173,29 @@ $ git branch -vv
 用法3: git rebase [--onto] <newbase>  [<newbase>]  <till>
 用法4: git rebase [--onto] <newbase>  [<newbase>]  [HEAD]
 ```
+#####  修改多个提交信息
+`git rebase -i HEAD~3`进入交互界面，可以执行下面操作。
+ - 重新排序提交
+ - 压缩提交，将一连串提交压缩为一个
+ ```
+  pick f7f3f6d changed my name a bit
+  squash 310154e updated README formatting and added blame
+  squash a5f4a0d added cat-file
+ ```
+ - 拆分提交，将一个提交拆分为几个
+ ```
+  pick f7f3f6d changed my name a bit
+  edit 310154e updated README formatting and added blame
+  pick a5f4a0d added cat-file
+ ```
+ ```
+  $ git reset HEAD^
+  $ git add README
+  $ git commit -m 'updated README formatting'
+  $ git add lib/simplegit.rb
+  $ git commit -m 'added blame'
+  $ git rebase --continue
+ ```
 
 ### 储存工作
  - 储存工作：`git stash`
@@ -206,7 +229,12 @@ M  a.txt
 ```
 $ git clean
 ```
-  - -d:包含目录
-	- -n:仅显示效果，并不实际执行
-	- -x:.gitignore忽略的文件
-	- -f:强制删除
+ - -d:包含目录
+ - -n:仅显示效果，并不实际执行
+ - -x:.gitignore忽略的文件
+ - -f:强制删除
+### reset
+reset 命令会以特定的顺序重写这三棵树(HEAD,索引index，工作目录),在你指定以下选项时停止:
+1. 移动 HEAD 分支的指向 (若指定了 --soft,则到此停止)
+2. 使索引看起来像 HEAD (若未指定 --hard,则到此停止)
+3. 使工作目录看起来像索引
