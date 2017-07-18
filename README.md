@@ -89,7 +89,7 @@ $ git remote add <shortname> <url>
 $ git remote add pb https://github.com/paulboone/ticgit
 $ git fetch pb
 ```
- - 从远程仓库中抓取与拉取 
+ - 从远程仓库中抓取与拉取
 ```
 $ git fetch [remote-name]
 ```
@@ -159,3 +159,30 @@ $ git branch -vv
  - 变基:寻找两个分支的最近共同祖先，然后对比当前分支相对于该祖先的历史提交，提取相应的修改并存为临时文件，然后将当前分支指向目标基底，然后将之前另存为临时文件的修改依序应用。
  - 变基的特点:实际的开发工作是并行的，但是看起来提交历史是是串行的。
  - 变基的使用：只对尚未推送或分享给别人的本地修改执行变基操作清理历史,从不对已推送至别处的提交执行变基操作。
+
+### 储存工作
+ - 储存工作：`git stash`
+```
+$ git st -s
+M  a.txt
+ M b.txtd
+```
+ - 创造性储存：不储存任何已暂存内容｀git stash  --keep-index｀
+ - 储存未跟踪内容：`git stash -u`
+ - 查看储存内容：` stash list`
+ - 重新引用存储的工作：`stash apply #最近的一次储存` `stash  apply stash@{2} #某一次储存 `
+ ```
+ $ git stash apply
+ $ git st -s
+ M a.txt
+ M b.txt
+ ```
+ 注意此时，原来暂存的文件变为未暂存，如果想不变，学添加--index参数。
+ ```
+ $ git stash apply --index
+ $ git st -s
+ M  a.txt
+  M b.txt
+ ```
+  - 移除储存的内容：`git stash drop`
+	- 应用储存然后从栈上移除：`git stash pop`
