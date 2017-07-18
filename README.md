@@ -186,3 +186,13 @@ M  a.txt
  ```
  - 移除储存的内容：`git stash drop`
  - 应用储存然后从栈上移除：`git stash pop`
+####从储藏创建一个分支
+ －在新分支恢复工作，并继续工作,避免出现冲突:`git stash branch testchanges`
+###清理工作目录或者文件
+```
+$ git clean
+```
+  - -d:包含目录
+	- -n:仅显示效果，并不实际执行
+	- -x:.gitignore忽略的文件
+	- -f:强制删除
