@@ -170,7 +170,7 @@ M  a.txt
  - 创造性储存：不储存任何已暂存内容｀git stash  --keep-index｀
  - 储存未跟踪内容：`git stash -u`
  - 查看储存内容：` stash list`
- - 重新引用存储的工作：`stash apply #最近的一次储存` `stash  apply stash@{2} #某一次储存 `
+ - 重新引用存储的工作：`stash apply #最近的一次储存` `stash  apply stash@{2} #某一次储存`
  ```
  $ git stash apply
  $ git st -s
@@ -184,5 +184,5 @@ M  a.txt
  M  a.txt
   M b.txt
  ```
-  - 移除储存的内容：`git stash drop`
-	- 应用储存然后从栈上移除：`git stash pop`
+ - 移除储存的内容：`git stash drop`
+ - 应用储存然后从栈上移除：`git stash pop`
